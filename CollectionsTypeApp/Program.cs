@@ -4,9 +4,11 @@
     {
         static void Main(string[] args)
         {
-            CreateArray();
-            ForIteration();
-            ForEachIteration();
+            //CreateArray();
+            //ForIteration();
+            //ForEachIteration();
+            //DynamicArray();
+            DynamicArrayAverage();
         }
 
         static void CreateArray()
@@ -49,6 +51,53 @@
                 int num2 = item - '0';
                 Console.WriteLine(num2);
             }
+        }
+
+        static void DynamicArray()
+        {
+            Console.Write("please enter array size = ");
+            int arraySize = int.Parse(Console.ReadLine()!);
+            int[] numbers = new int[arraySize];
+            for (int i = 0; i < arraySize; i++)
+            {
+                Console.Write($"Enter array item({i + 1}) = ");
+                numbers[i] = int.Parse(Console.ReadLine()!);
+            }
+            Console.WriteLine("========================");
+            int[] reversedArray = new int[arraySize];
+            for (int i = arraySize - 1; i>=0; i--)
+            {
+                reversedArray[arraySize - i- 1] = numbers[i];
+            }
+
+            foreach (var item in numbers)
+            {
+                Console.WriteLine(item);
+            }
+            Console.WriteLine("========================");
+            foreach (var item in reversedArray)
+            {
+                Console.WriteLine(item);
+            }
+        }
+        static void DynamicArrayAverage()
+        {
+            Console.Write("please enter array size = ");
+            int arraySize = int.Parse(Console.ReadLine()!);
+            int[] numbers = new int[arraySize];
+            for (int i = 0; i < arraySize; i++)
+            {
+                Console.Write($"Enter array item({i + 1}) = ");
+                numbers[i] = int.Parse(Console.ReadLine()!);
+            }
+            Console.WriteLine("========================");
+            int sum = 0;
+            foreach (var item in numbers)
+            {
+                sum += item;
+            }
+            double average = sum / numbers.Length;
+            Console.WriteLine($"average of numbers = {average}");
         }
     }
 }
