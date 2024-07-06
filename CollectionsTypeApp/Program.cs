@@ -9,7 +9,8 @@
             //ForEachIteration();
             //DynamicArray();
             //DynamicArrayAverage();
-            PlayWithDoWhileLoops();
+            //PlayWithDoWhileLoops();
+            PlayWithSwitch();
         }
 
         static void CreateArray()
@@ -118,7 +119,7 @@
             while (true)
             {
                 Console.Write("enter any word: ");
-                var word = Console.ReadLine();
+                var word = Console.ReadLine() ?? "";
                 if (word != "exit")
                 {
                     Console.WriteLine(word.ToUpper());
@@ -127,6 +128,34 @@
                     break;
                 }
             }
+        }
+
+        static void PlayWithSwitch()
+        {
+            Console.Write("enter any word: ");
+            var word = Console.ReadLine() ?? "";
+            Console.WriteLine("please select option: ");
+            Console.WriteLine("1. convert to upper");
+            Console.WriteLine("2. convert to lower");
+            Console.WriteLine("3. print string length");
+            var selection = Console.ReadLine() ?? "";
+            switch (selection) {
+                case "1":
+                    Console.WriteLine(word.ToUpper());
+                    break;
+                case "2":
+                    Console.WriteLine(word.ToLower());
+                    break;
+                case "3":
+                    Console.WriteLine(word.Length);
+                    break;
+                default:
+                    Console.WriteLine("Enter correct option");
+                    break;
+
+            }
+           
+
         }
     }
 }
