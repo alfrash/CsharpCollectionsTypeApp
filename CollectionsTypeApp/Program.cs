@@ -8,7 +8,8 @@
             //ForIteration();
             //ForEachIteration();
             //DynamicArray();
-            DynamicArrayAverage();
+            //DynamicArrayAverage();
+            PlayWithDoWhileLoops();
         }
 
         static void CreateArray()
@@ -98,6 +99,34 @@
             }
             double average = sum / numbers.Length;
             Console.WriteLine($"average of numbers = {average}");
+        }
+
+        static void PlayWithDoWhileLoops()
+        {
+            var x = 2;
+            do
+            {
+                Console.WriteLine(x++);
+            } while (x <= 10);
+            Console.WriteLine("========================");
+            var y = 2;
+            while (y <= 10)
+            {
+                Console.WriteLine(y++);
+            }
+
+            while (true)
+            {
+                Console.Write("enter any word: ");
+                var word = Console.ReadLine();
+                if (word != "exit")
+                {
+                    Console.WriteLine(word.ToUpper());
+                }else
+                {
+                    break;
+                }
+            }
         }
     }
 }
